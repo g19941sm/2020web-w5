@@ -50,5 +50,6 @@ function result() {
   }
 
   story.textContent = newStory;
+  story.textContent = newStory2;
   story.style.visibility = 'visible';
 }
