@@ -30,15 +30,16 @@ function result() {
   let z2Item = randomValueFromArray(insertZ2);
 
   newStory = newStory.replace(':insertx:',xItem);
-  newStory2 = newStory.replace(':insertx:',x2Item);
+  newStory2 = newStory2.replace(':insertx:',x2Item);
   newStory = newStory.replace(':inserty:',yItem);
-  newStory2 = newStory.replace(':inserty:',y2Item);
+  newStory2 = newStory2.replace(':inserty:',y2Item);
   newStory = newStory.replace(':insertz:',zItem);
   newStory2 = newStory2.replace(':insertz:',z2Item);
 
   if(customName.value !== '') {
     const name = customName.value;
     newStory = newStory.replace('Bob',name);
+    newStory2 = newStory2.replace('Bob',name);
   }
 
   if(document.getElementById("日本").checked) {
