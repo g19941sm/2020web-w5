@@ -24,7 +24,9 @@ function result() {
 
   let xItem = randomValueFromArray(insertX);
   let x2Item = randomValueFromArray(insertX2);
+  let x2Item = randomValueFromArray(insertX2);
   let yItem = randomValueFromArray(insertY);
+  let y2Item = randomValueFromArray(insertY2);
   let y2Item = randomValueFromArray(insertY2);
   let zItem = randomValueFromArray(insertZ);
   let z2Item = randomValueFromArray(insertZ2);
