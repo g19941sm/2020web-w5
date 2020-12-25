@@ -12,32 +12,47 @@ let insertX = ['Willy the Goblin','Big Daddy','Father Christmas'];
 let insertY = ['the soup kitchen','Disneyland','the White House'];
 let insertZ = ['spontaneously combusted','melted into a puddle on the sidewalk','turned into a slug and crawled away'];
 
+let storyText2 = '気温は摂氏-1度で外は寒かった。:insertx:は出かけた。 :inserty:に着いた時。 :insertz:体重50kgの :insertx:は驚いたが、私は驚かなかった。:inserty:ではよくあることだった';
+let insertX2 = ['サンタクロース','ミッキーマウス','スヌーピー'];
+let insertY2 = ['津田塾大学','ディズニーランド','千駄ヶ谷'];
+let insertZ2 = ['混雑していた。','雪が降っていた。','風が強かった。'];
+
 randomize.addEventListener('click', result);
 
 function result() {
   let newStory = storyText;
+  let newStory2 = storyText2;
 
   let xItem = randomValueFromArray(insertX);
   let yItem = randomValueFromArray(insertY);
   let zItem = randomValueFromArray(insertZ);
+  
+  let xItem2 = randomValueFromArray(insertX2);
+  let yItem2 = randomValueFromArray(insertY2);
+  let zItem2 = randomValueFromArray(insertZ2);
 
   newStory = newStory.replace(':insertx:',xItem);
   newStory = newStory.replace(':insertx:',xItem);
   newStory = newStory.replace(':inserty:',yItem);
   newStory = newStory.replace(':insertz:',zItem);
+  
+  newStory2 = newStory2.replace(':insertx:',xItem2);
+  newStory2 = newStory2.replace(':insertx:',xItem2);
+  newStory2 = newStory2.replace(':inserty:',yItem2);
+  newStory2 = newStory2.replace(':inserty:',yItem2);
+  newStory2 = newStory2.replace(':insertz:',zItem2);
 
-  if(customName.value !== '') {
+  if(document.getElementById("us").checked && customName.value !== '') {
     const name = customName.value;
     newStory = newStory.replace('Bob',name);
+    story.textContent = newStory;
   }
 
-  if(document.getElementById("uk").checked) {
-    const weight = Math.round(300*0.0714286) + ' stone';
-    const temperature =  Math.round((94-32) * 5 / 9) + ' centigrade';
-    newStory = newStory.replace('94 fahrenheit',temperature);
-    newStory = newStory.replace('300 pounds',weight);
+  if(document.getElementById("日本").checked && customName.value !== '') {
+    const name = customName.value;
+    newStory2 = newStory2.replace('私',name);
+    story.textContent = newStory2;
   }
 
-  story.textContent = newStory;
   story.style.visibility = 'visible';
 }
